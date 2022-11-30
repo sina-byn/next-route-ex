@@ -3,9 +3,10 @@ const configSetter = require('./utils/configSetter');
 const routeExtractor = require('./utils/routeExtractor');
 const routeSorter = require('./utils/routeSorter');
 const routeWriter = require('./utils/routeWriter');
+const templateGenerator = require('./utils/templateGenerator');
 
 const config = configSetter();
-const { write_log, categorize } = config;
+const { write_log, categorize, generate_template } = config;
 
 const extractedRoutes = routeExtractor();
 const [allRoutes, staticRoutes, dynamicRoutes] =
@@ -19,4 +20,11 @@ if (write_log) {
         routeWriter(allRoutes, staticRoutes, dynamicRoutes);
     else
         routeWriter(allRoutes);
+    }
+    
+if (generate_template) {
+    if (categorize)
+        templateGenerator(allRoutes, staticRoutes, dynamicRoutes);
+    else
+        templateGenerator(allRoutes);
 }

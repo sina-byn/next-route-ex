@@ -4,7 +4,7 @@ const { parse } = require('path');
 const routeExtractor = () => {
     const routes = [];
 
-    const extractorFn = (dir = './src/pages') => {
+    const extractorFn = (dir = './pages') => {
         const files = readdirSync(dir);
         const validExtensions = ['.js', '.ts', '.jsx', '.tsx'];
         const commentRegExp = /\/\*\*\*\*[\s\S]*?\*\//;
@@ -22,13 +22,13 @@ const routeExtractor = () => {
                     : [dir.split('pages')[1], name].join('/');
 
                 if (route.includes('[...')) {
-                    const files = readdirSync(`./src/pages${route.split('/').slice(0, -1).join('/')}`);
+                    const files = readdirSync(`./pages${route.split('/').slice(0, -1).join('/')}`);
                     files.forEach(file => {
                         const { ext } = parse(file);
 
                         if (!validExtensions.includes(ext)) return;
 
-                        const code = readFileSync(`./src/pages${route}${ext}`, 'utf-8');
+                        const code = readFileSync(`./pages${route}${ext}`, 'utf-8');
                         const routeComment = commentRegExp.exec(code)['0'];
 
                         if (!routeComment) return;

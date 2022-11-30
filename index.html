@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Project Routes</title>
+      <style>
+        h3 {
+            background-color: #777777;
+            color: #f5f5f5;
+            padding: 0.5rem 1rem;
+        }
+
+        p {
+            max-width: calc(100vw - 3rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-left: 3rem;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom-style: solid;
+            border-bottom-color: #222222;
+            border-bottom-width: 1px;
+            overflow-x: auto;
+        }
+
+        button {
+            cursor: pointer;
+        }
+      </style>
+    </head>
+    <body>
+			<h3>
+				All Routes:
+			</h3>
+			<p style="font-family: consolas">
+				/
+				<button type='button'>copy</button>
+			</p>
+			<h3>
+				Static Routes:
+			</h3>
+			<p style="font-family: consolas">
+				/
+				<button type='button'>copy</button>
+			</p>
+		</body>
+    <script>
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', e => {
+                const route = e.target.parentNode.innerText.split('copy')[0].trim();
+                navigator.clipboard.writeText(route).then(_ => alert('route copied to clipboard'));
+            })
+        });
+    </script>
+</html>
+    
