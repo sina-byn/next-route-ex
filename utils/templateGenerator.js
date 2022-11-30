@@ -56,10 +56,10 @@ const templateGenerator = (...routes) => {
         })
     );
 
-    if (!existsSync('./route_ex_template'))
-        mkdirSync('./route_ex_template');
+    if (!existsSync('./next-route-ex-template'))
+        mkdirSync('./next-route-ex-template');
 
-    const templateFile = openSync('./index.html', 'w+');
+    const templateFile = openSync('./next-route-ex-template/index.html', 'w+');
     writeFileSync(templateFile, markupGenerator(markup));
 };
 

@@ -12,7 +12,7 @@ const setRouteSetName = idx => {
 }
 
 const routeWriter = (...routes) => {
-    const routesLog = openSync('./route_ex/route_ex.txt', 'w+');
+    const routesLog = openSync('./next-route-ex/next-route-ex.txt', 'w+');
     const logString = routes.map((routeSet, idx) => {
         routeSet.unshift(setRouteSetName(idx));
         routeSet = routeSet.map((route, idx) => idx !== 0 ? '\t' + route : route);

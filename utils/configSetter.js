@@ -1,4 +1,4 @@
-const config = require('../route_ex.config');
+const config = require('../next-route-ex.config');
 
 const defaultConfig = {
     write_log: true,

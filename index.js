@@ -12,8 +12,8 @@ const extractedRoutes = routeExtractor();
 const [allRoutes, staticRoutes, dynamicRoutes] =
     routeSorter(extractedRoutes);
 
-if (!existsSync('./route_ex'))
-    mkdirSync('./route_ex');
+if (!existsSync('./next-route-ex'))
+    mkdirSync('./next-route-ex');
 
 if (write_log) {
     if (categorize)
