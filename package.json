@@ -3,10 +3,10 @@
   "private": true,
   "version": "1.0.0",
   "main": "index.js",
-  "keywords": ["node.js", "next.js", "routes", "routing"],
   "author": "Sina Bayandorian <sina.sina.bayan@protonmail.com> (https://my-portfolio-sina-byn.vercel.app/)",
   "description": "a node.js script that extracts routes from your next.js project",
   "license": "SEE LICENSE IN LICENSE",
+  "keywords": ["node.js", "next.js", "routes", "routing"],
   "repository": "github:sina-byn/route_ex",
   "scripts": {
     "build": "node index.js"
